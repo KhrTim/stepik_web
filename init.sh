@@ -10,10 +10,10 @@ mkdir ./public/js;
 
 
 if [[ -f "nginx.conf" ]]; then
-    # sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default;
-    # sudo /etc/init.d/nginx restart;
+    sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/default;
+    sudo /etc/init.d/nginx restart;
     echo "Existing file linked";
 else
-    # cp /etc/nginx/nginx.conf .;
+    cp /etc/nginx/sites-enabled/default .;
     echo "File copied from nginx";
 fi
