@@ -1,15 +1,17 @@
 #!/bin/bash
 
-mkdir public;
-mkdir uploads;
-mkdir etc;
+if [! -d "public"]; then
+    mkdir public;
+    mkdir uploads;
+    mkdir etc;
 
-mkdir ./public/img;
-mkdir ./public/css;
-mkdir ./public/js;
+    mkdir ./public/img;
+    mkdir ./public/css;
+    mkdir ./public/js;
 
 
-mv nginx.conf etc/;
+    mv nginx.conf etc/;
+fi
 
 sudo ln -s /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf;
 sudo rm /etc/nginx/sites-enabled/default;
