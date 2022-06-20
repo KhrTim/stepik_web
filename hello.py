@@ -1,6 +1,5 @@
 def wsgi_processor_make_file(environ, start_response):
     query = environ["QUERY_STRING"]
-    print(f"RECEIVED {query}")
     document = query.replace('&', '\n').encode('utf-8') # ??
 
     headers = [
