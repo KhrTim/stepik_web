@@ -19,7 +19,8 @@ sudo rm /etc/nginx/sites-enabled/default;
 
 sudo /etc/init.d/nginx restart;
 
-gunicorn --bind='0.0.0.0:8000' ask.wsgi;
+
+/ask/gunicorn --bind='0.0.0.0:8000' ask.wsgi;
 
 # link gunicorn too
 
