@@ -2,14 +2,10 @@
 
 mkdir public;
 mkdir uploads;
-mkdir etc;
 
 mkdir ./public/img;
 mkdir ./public/css;
 mkdir ./public/js;
-
-
-mv nginx.conf etc/;
 
 
 

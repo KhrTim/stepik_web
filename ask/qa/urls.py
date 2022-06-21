@@ -1,12 +1,11 @@
-from qa.urls import test
-from django.urls import include, path
+from django.conf.urls import url
 
-urlpatterns = patterns('qa.views',
-    path('', test, name = 'root'),
-    path('login/', test, name = 'login'),
-    path('signup/', test, name = 'signup'),
-    path('question/<int:ID>', test, name = 'question'),
-    path('ask/', test, name = 'ask'),
-    path('popular/', test, name = 'popular'),
-    path('new/', test, name = 'new'),
+urlpatterns = patterns('ask.qa',
+    url(r'^$', 'test', name = 'root'),
+    url(r'^login/$', 'test', name = 'login'),
+    url(r'^signup/$', 'test', name = 'signup'),
+    url(r'^question/(?P<ID>d+)$', 'test', name = 'question'),
+    url(r'^ask/$', 'test', name = 'ask'),
+    url(r'^popular/$', 'test', name = 'popular'),
+    url(r'^new/$', 'test', name = 'new'),
 )
