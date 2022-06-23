@@ -16,7 +16,9 @@ class Question(models.Model):
     added_at = models.DateTimeField(blank = True, auto_now_add=True)
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    likes = models.ManyToManyField(User, related_name='likes_of_users')
+    # related_name - because it makes special field for user that was already created above
+    # what fields and when are being created automatically???
+    likes = models.ManyToManyField(User, related_name='likes_of_users') 
     objects = QuestionManager()
 
 class Answer(models.Model):
