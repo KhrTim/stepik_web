@@ -19,6 +19,12 @@ sudo rm /etc/nginx/sites-enabled/default;
 
 sudo /etc/init.d/nginx restart;
 
+sudo /etc/init.d/mysql start;
+mysql -uroot -e "create database stepic_web;";
+mysql -uroot -e "grant all privileges on stepic_web.* to 'box'@'localhost' with grant option;";
+~/web/ask/manage.py makemigrations;
+~/web/ask/manage.py migrate;
+
 cd ask;
 gunicorn --bind='0.0.0.0:8000' ask.wsgi;
 
