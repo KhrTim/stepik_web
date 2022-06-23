@@ -20,8 +20,9 @@ sudo rm /etc/nginx/sites-enabled/default;
 sudo /etc/init.d/nginx restart;
 
 sudo /etc/init.d/mysql start;
-mysql -uroot -e "create database stepic_web;";
-mysql -uroot -e "grant all privileges on stepic_web.* to 'box'@'localhost' with grant option;";
+mysql -uroot -e "create database web;";
+mysql -uploads -e "create user 'tim'@'localhost'"
+mysql -uroot -e "grant all privileges on stepic_web.* to 'tim'@'localhost' with grant option;";
 ~/web/ask/manage.py makemigrations;
 ~/web/ask/manage.py migrate;
 
