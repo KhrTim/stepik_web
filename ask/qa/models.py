@@ -7,14 +7,14 @@ class Question(models.Model):
     text = models.TextField()
     added_at = models.DateTimeField(blank = True, auto_now_add=True)
     rating = models.IntegerField(default=0)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL)
-    likes = models.ManyToManyField(User)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    likes = models.ManyToManyField(User, related_name='likes_of_users')
 
 class Answer(models.Model):
     text = models.TextField()
     added_at = models.DateTimeField(blank = True, auto_now_add=True)
-    question = models.ForeignKey(Question, on_delete=models.SET_NULL)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL)
+    question = models.ForeignKey(Question, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     
 # what are managers and what are they for?
 
